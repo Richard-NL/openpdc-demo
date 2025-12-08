@@ -1,0 +1,56 @@
+{
+    "name": "openpdc/sitea",
+    "description": "WordPress managed with Composer",
+    "type": "project",
+    "require": {
+        "johnpbloch/wordpress": "^6.0",
+        "composer/installers": "^2.0",
+        "johnbillion/extended-cpts": "^5.0",
+        "wpackagist-plugin/posts-to-posts": "^1.6",
+        "openwebconcept/plugin-pdc-base": "3.18.0",
+        "metabox/meta-box-lite": "2.3.4"
+    },
+    "extra": {
+        "wordpress-install-dir": "wordpress",
+        "installer-paths": {
+            "wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "wp-content/themes/{$name}/": ["type:wordpress-theme"]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "johnpbloch/wordpress-core-installer": true
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "openwebconcept/plugin-pdc-base",
+                "version": "3.18.0",
+                "type": "wordpress-plugin",
+                "dist": {
+                    "url": "https://github.com/OpenWebconcept/plugin-pdc-base/archive/refs/tags/v3.18.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "metabox/meta-box-lite",
+                "version": "2.3.4",
+                "type": "wordpress-plugin",
+                "dist": {
+                    "url": "https://metabox.io/downloads/meta-box-lite.zip",
+                    "type": "zip"
+                }
+            }
+        }
+    ]
+}
