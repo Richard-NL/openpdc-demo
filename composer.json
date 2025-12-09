@@ -5,6 +5,7 @@
     "require": {
         "johnpbloch/wordpress": "^6.0",
         "composer/installers": "^2.0",
+        "cweagans/composer-patches": "^1.7",
         "johnbillion/extended-cpts": "^5.0",
         "wpackagist-plugin/posts-to-posts": "^1.6",
         "openwebconcept/plugin-pdc-base": "3.18.0",
@@ -13,14 +14,20 @@
     "extra": {
         "wordpress-install-dir": "wordpress",
         "installer-paths": {
-            "wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
-            "wp-content/themes/{$name}/": ["type:wordpress-theme"]
+            "wordpress/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "wordpress/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+        },
+        "patches": {
+            "openwebconcept/plugin-pdc-base": {
+                "Add Meta Box Lite support": "patches/plugin-pdc-base/core.php.patch"
+            }
         }
     },
     "config": {
         "allow-plugins": {
             "composer/installers": true,
-            "johnpbloch/wordpress-core-installer": true
+            "johnpbloch/wordpress-core-installer": true,
+            "cweagans/composer-patches": true
         }
     },
     "repositories": [

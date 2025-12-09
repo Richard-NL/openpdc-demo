@@ -1,0 +1,25 @@
+--- a/config/core.php
++++ b/config/core.php
+@@ -44,18 +44,11 @@
+         [
+             'type' => 'plugin',
+             'label' => 'RWMB Metabox',
+-            'file' => 'meta-box/meta-box.php',
++            'file' => 'meta-box-lite/meta-box-lite.php',
+             'alternatives' => [
+-                'meta-box/meta-box.php',           // Free Meta Box
+-                'meta-box-aio/meta-box-aio.php'   // Meta Box AIO
+-            ],
+-        ],        [
+-            'type' => 'plugin',
+-            'label' => 'RWMB Metabox Group',
+-            'file' => 'meta-box-group/meta-box-group.php',
+-            'alternatives' => [
+-                'meta-box-group/meta-box-group.php', // Free Meta Box Group extension
+-                'meta-box-aio/meta-box-aio.php'      // Meta Box AIO (includes Group functionality)
++                'meta-box-lite/meta-box-lite.php',   // Meta Box Lite
++                'meta-box/meta-box.php',             // Free Meta Box
++                'meta-box-aio/meta-box-aio.php'      // Meta Box AIO
+             ]
+         ],
+         [
